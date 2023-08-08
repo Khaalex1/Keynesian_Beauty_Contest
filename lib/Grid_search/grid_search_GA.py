@@ -46,10 +46,6 @@ def GA_grid_search(all_comb, fitness, agent, bound_min=-1, bound_max=1, memory=1
         select_function = wheel_selection
         # 0 is uniform cross., 1 is middle-point
         crossover = uniform_crossover if cross_type == 0 else middle_point_crossover
-
-        # select_pop, fit_vector = GA_run(fitness, pop_shape, bound_min, bound_max, select_function, select_size, crossover, pop_size,
-        #    1, mut_function, mut_rate, nb_elites, cull, nb_gen = 501, print_bool=True, integer_val = integer_val)
-
         select_pop, fit_vector, _ = GA_multiple_runs(fitness, pop_shape, bound_min, bound_max, select_function, select_size,
                                                      crossover, pop_size, 1, mut_function, mut_rate, nb_elites,
                                                      cull, nb_gen=101, nb_runs=3, print_bool=False,integer_val= integer_val)

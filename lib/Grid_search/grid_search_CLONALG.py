@@ -44,8 +44,6 @@ def CLONALG_grid_search(all_comb, fitness, agent, bound_min=-1, bound_max=1, mem
         nb_replaced = ceil(replaced_rate * pop_size)
         mut_factor = mut_const * inv_mag
         pop_shape = (ab_size, pop_size)
-        # select_pop, fit_vector = CLONALG_run(fitness, pop_shape, bound_min, bound_max, select_size, clone_rate, mut_function,
-        #             mut_factor, nb_replaced, nb_gen = 501, print_bool=True, integer_val=integer_val)
         select_pop, fit_vector, _ = CLONALG_multiple_runs(fitness, pop_shape, bound_min, bound_max, select_size,
                                                           clone_rate, mut_function, mut_factor, nb_replaced, nb_gen=101,
                                                           nb_runs=3, print_bool=False, integer_val=integer_val)
