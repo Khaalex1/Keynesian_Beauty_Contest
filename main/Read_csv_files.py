@@ -20,48 +20,65 @@ agents optimising Win Count with GA (on multiple sets of hyperparam.)
 
 """
 if __name__ == "__main__":
-    # static-rationaity crowds
+    # static-rationality crowds
     random_crowds = False
     #nb of opponents against agent
     nb_opp = 4
 
     #==============================================================================================
     """Best configuration of Dict-opt, trained with CLONALG/AIS on Win Count fitness"""
+
+    print("Best Dict-opt info")
     df = pd.read_csv("../result_files/AIS_dict_opt_WC.csv")
     best_config = extract_best_from_pandas(df)
-    wc_std, loss_std = hyperparameter_sensitivity(df)
-
-    """evaluating Dict-opt on 10 trials"""
-    # agent = dict_opt_agent
-    # list_wc, list_loss = evaluation(agent, best_config, begin_measure=1, print_bool=True, random_crowds=random_crowds,
-    #                                 nb_opp=nb_opp)
+    print("\nBest Dict-opt config = \n", best_config)
+    print("===================================================================================")
 
     #================================================================================================================================
     """Best configuration of RegNet1, trained with CLONALG/AIS on Win Count fitness"""
+
+    print("Best RegNet1 info")
     df1 = pd.read_csv("../result_files/AIS_RegNet_WC_m1.csv")
     best_config1 = extract_best_from_pandas(df1)
-
-    """evaluating RegNet1 on 10 trials"""
-    # agent = memory_RegNet([1, 10, 10, 1])
-    # list_wc, list_loss = evaluation(agent, best_config1, begin_measure=1, print_bool=True, random_crowds=random_crowds,
-    #                                 nb_opp=nb_opp)
+    print("\nBest RegNet1 weights = \n", best_config1)
+    print("===================================================================================")
 
     #=================================================================================================================================
     """Best configuration of RegNet2, trained with CLONALG/AIS on L2 fitness"""
+
+    print("Best RegNet2 info")
     df2 = pd.read_csv("../result_files/AIS_RegNet_L2_m2.csv")
     best_config2 = extract_best_from_pandas(df2)
+    print("\nBest RegNet2 weights = \n", best_config2)
 
-    """evaluating RegNet2 on 10 trials"""
-    # agent = memory_RegNet([2, 10, 10, 1])
-    # list_wc, list_loss = evaluation(agent, best_config2, begin_measure=1, print_bool=True, random_crowds=random_crowds,
-    #                                 nb_opp=nb_opp)
-
+    print("===================================================================================")
     #=================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     """combined weights of HybridNet"""
-    weights = np.hstack((best_config1, best_config2))
-    agent = HybridNet
+
+    # weights = np.hstack((best_config1, best_config2))
+    # agent = HybridNet
 
     """evaluating HybridNet on 10 trials"""
-    list_wc, list_loss = evaluation(agent, weights, begin_measure=1, print_bool=True, random_crowds=random_crowds, nb_opp = nb_opp)
+
+    # list_wc, list_loss = evaluation(agent, weights, begin_measure=1, print_bool=True, random_crowds=random_crowds, nb_opp = nb_opp)
 
 

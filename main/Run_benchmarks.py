@@ -12,7 +12,7 @@ equivalent to a min value of 0
 
 if __name__ == "__main__":
 
-    """RUN CLONALG"""
+    """RUNNING CLONALG (SHIFTED SPHERE BENCHMARK)"""
     #"""
     #possible fitness functions : sphere, shifted_sphere, double_sum, rastrigin, rosenbrock, griewank, schwefel
     #refer to Keynesian_Beauty_Contest.lib.Templates.Template_Benchmarks for ground truth solutions
@@ -35,19 +35,19 @@ if __name__ == "__main__":
     mut_factor = 2.5e-5
     nb_replaced = 3
     nb_gen = 1001
-    nb_runs = 3
-    print_bool = False
+    nb_runs = 1
+    print_bool = True
     integer_val = False
 
     print("=========================================")
-    print("CLONALG RUN")
+    print("CLONALG RUN (RASTRIGIN BENCHMARK)")
     select_pop, fit_vector, _ = CLONALG_multiple_runs(fitness, pop_shape, bound_min, bound_max, select_size, clone_rate,
                                                       mut_function,
                                                       mut_factor, nb_replaced, nb_gen, nb_runs, print_bool, integer_val)
     #"""
 
 
-    """RUN GA"""
+    """RUNNING GA"""
 
     #"""
     # possible fitness functions : sphere, double_sum, rastrigin, rosenbrock, griewank, schwefel
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     crossover = middle_point_crossover
     crossover_rate = 1
     nb_child = pop_size
-    # possible mutation functions : shrink_mutation, random_mutation (second_order_random)
+    # possible mutation functions : GA_shrink_mutation, GA_uniform_mutation, GA_integer_mutation
     norm = 3
     mut_function = GA_second_order_shrink(norm)
     gen_mut_rate = 0.05
@@ -77,8 +77,8 @@ if __name__ == "__main__":
     #nb replaced
     cull = 2
     nb_gen = 1001
-    nb_runs = 3
-    print_bool = False
+    nb_runs = 1
+    print_bool = True
     integer_val = False
 
     print("=========================================")

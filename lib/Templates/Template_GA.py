@@ -1,8 +1,8 @@
 """
 Template functions for the Genetic Algorithm. Paradigm : Maximisation
 
-Inspired by "Sean Luke. Essentials of Metaheuristics. Lulu, second edition, 2013."
-URL :  http://cs.gmu.edu/∼sean/book/metaheuristics/
+Inspired by "Sean Luke. Essentials of Metaheuristics. Lulu, second edition, 2013.", URL :  http://cs.gmu.edu/∼sean/book/metaheuristics/
+and "Clever algorithms: nature-inspired programming recipes", URL : https://github.com/clever-algorithms/CleverAlgorithms
 """
 
 import numpy as np
@@ -363,7 +363,7 @@ def GA_multiple_runs(fitness, pop_shape, bound_min, bound_max, selection, select
     :param nb_runs: int (preferably odd)
     :param print_bool: bool
     :param integer_val: bool
-    :return: pop array of median fitness, median fitness vector, list of stats (mean, std, min, max fitness)
+    :return: pop array of median fitness, median fitness vector, fitness vector of each run best individual
     """
     if (nb_runs%2) == 0:
         nb_runs += 1
@@ -400,4 +400,4 @@ def GA_multiple_runs(fitness, pop_shape, bound_min, bound_max, selection, select
     print("Fitness Min ({} runs) = {}".format(nb_runs, min_f))
     print("Fitness Max ({} runs) = {}".format(nb_runs, max_f))
     print("----------------------------------------------------")
-    return final_select, med_fitness, [avg_f, std_f, min_f, max_f]
+    return final_select, med_fitness, total_fit[:, 0]

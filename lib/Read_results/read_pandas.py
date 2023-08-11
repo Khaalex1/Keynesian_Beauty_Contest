@@ -25,19 +25,19 @@ def extract_best_from_pandas(df):
     best_config = decoder(best_config)
     return best_config
 
-def hyperparameter_sensitivity(df):
-    """
-    Compute hyperparameter sensitivity
-    :param df: panada dataframe containing individuals and their performance
-    :return: WC sensitivity and L2 sensitivity
-    """
-    #wc_avg = np.mean(df["Avg Win Count"])
-    wc_std = np.std(df["Avg Win Count"])
-    #loss_avg = np.mean(df["Avg L2 Loss"])
-    loss_std = np.std(df["Avg L2 Loss"])
-    print("===========================================================")
-    print("STD of Win Count of best individuals = ", wc_std)
-    print("STD of Loss of best individuals = ", loss_std)
-    print("===========================================================")
-    return wc_std, loss_std
+# def hyperparameter_sensitivity(df):
+#     """
+#     Compute hyperparameter sensitivity
+#     :param df: panada dataframe containing individuals and their performance
+#     :return: WC sensitivity and L2 sensitivity
+#     """
+#     #wc_avg = np.mean(df["Avg Win Count"])
+#     wc_std = np.std(df["Avg Win Count"])
+#     #loss_avg = np.mean(df["Avg L2 Loss"])
+#     loss_std = np.std(df["Avg L2 Loss"])
+#     print("===========================================================")
+#     print("STD of Win Count of best individuals = ", wc_std)
+#     print("STD of Loss of best individuals = ", loss_std)
+#     print("===========================================================")
+#     return wc_std, loss_std
 

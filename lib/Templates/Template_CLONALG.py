@@ -223,12 +223,12 @@ def CLONALG_multiple_runs(fitness, pop_shape, bound_min, bound_max, select_size,
     :param nb_runs: int (odd preferaby)
     :param print_bool: bool
     :param integer_val: bool
-    :return: pop array of median fitness, median fitness vector, list of stats (mean, std, min, max fitness)
+    :return: pop array of median fitness, median fitness vector, fitness vector of each run best individual
     """
     if (nb_runs%2) == 0:
         nb_runs += 1
-    total_select = np.zeros((3, pop_shape[0], select_size))
-    total_fit = np.zeros((3, select_size))
+    total_select = np.zeros((nb_runs, pop_shape[0], select_size))
+    total_fit = np.zeros((nb_runs, select_size))
     for i in range(nb_runs):
         select_pop, fit_vector = CLONALG_run(fitness, pop_shape, bound_min, bound_max, select_size, clone_rate, mut_function,
         mut_factor, nb_replaced, nb_gen, print_bool , integer_val)
@@ -237,6 +237,7 @@ def CLONALG_multiple_runs(fitness, pop_shape, bound_min, bound_max, select_size,
     med_fitness = np.median(total_fit, axis = 0)
     med_index = np.where(total_fit == med_fitness)
 
+    # keep only one index that corresponds to a median
     unique_col_index, ind = np.unique(med_index[1], return_index = True)
     row_index = med_index[0][ind]
 
@@ -256,7 +257,7 @@ def CLONALG_multiple_runs(fitness, pop_shape, bound_min, bound_max, select_size,
     print("Fitness Min ({} runs) = {}".format(nb_runs, min_f))
     print("Fitness Max ({} runs) = {}".format(nb_runs, max_f))
     print("----------------------------------------------------")
-    return final_select, med_fitness, [avg_f, std_f, min_f, max_f]
+    return final_select, med_fitness, total_fit[:, 0]
 
 
 

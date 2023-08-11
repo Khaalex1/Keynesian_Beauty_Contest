@@ -26,7 +26,7 @@ if __name__ == "__main__":
     p = 2/3
     nb_rounds = 10
     print_bool = 1
-    #win_counts, agent_loss = crowd_iterate(levels, agent, weights, p, nb_rounds, print_bool)
+    win_counts, agent_loss = crowd_iterate(levels, agent, weights, p, nb_rounds, print_bool)
 
 
     #========================================================================================

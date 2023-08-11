@@ -25,6 +25,7 @@ if __name__ == "__main__":
     regnet2_ais_wc = pd.read_csv("../result_files/AIS_RegNet_WC_m2.csv")
     weights = extract_best_from_pandas(regnet2_ais_wc)
     title = "RegNet2 response profile (AIS - Win Count)"
+    # If True, nullify Avg[t-1]>Avg[t-2] in contour plot
     print_plane = True
     D2_plotter(weights, title, print_plane)
 
@@ -34,5 +35,6 @@ if __name__ == "__main__":
     weights = extract_best_from_pandas(regnet1_ga_wc)
     p = 2/3
     title = "RegNet1 response profile (GA - Win Count)"
+    # specify if the agent is Dict-opt or not
     dict_opt = False
     D1_plotter(weights, p, title, dict_opt)
