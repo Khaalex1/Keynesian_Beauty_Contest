@@ -10,4 +10,4 @@ Experiments show that CLONALG is always a more efficient training method than GA
 An hybrid model combining plays of memory-1 and memory-2 networks, called in the project HybridNet, increases this performance to 81%, which can be considered excellent.
 
 The reader is encouraged to refer to the "main" files to understand how the program is run and what it does.
-# Keynesian_Beauty_Contest
+
