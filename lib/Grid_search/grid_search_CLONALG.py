@@ -5,6 +5,14 @@ from math import *
 import pandas as pd
 
 
+
+"""
+Note that it is also possible to test only ONE set of hyperparameters and save it in a file e.g. "filename.csv".
+TO DO SO : for example, testing CLONALG with pop_size = 40, sel_rate= 0.5, clone_rate = 0.25, beta_mag = 2, rep_rate = 0.05
+-> comb = [[40], [0.5], [0.25], [2], 0.05]]
+-> CLONALG_grid_search(comb, ... filename = "filename.csv")
+"""
+
 def CLONALG_grid_search(all_comb, fitness, agent, bound_min=-1, bound_max=1, memory=1, integer_val=False, fit_wc=False, filename='test.csv'):
     """
     Run CLONALG grid search

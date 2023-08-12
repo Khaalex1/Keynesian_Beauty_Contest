@@ -4,6 +4,11 @@ from Keynesian_Beauty_Contest.lib.Grid_search.grid_search_GA import *
 
 """
 WARNING : RUNNING THIS FILE TAKES DAYS TO TERMINATE (DURATION DEPENDING ON HARDWARE)
+
+Note that it is also possible to test only ONE set of hyperparameters and save it in a file e.g. "filename.csv".
+TO DO SO : for example, testing CLONALG with pop_size = 40, sel_rate= 0.5, clone_rate = 0.25, beta_mag = 2, rep_rate = 0.05
+-> comb = [[40], [0.5], [0.25], [2], 0.05]]
+-> CLONALG_grid_search(comb, ... filename = "filename.csv")
 """
 
 if __name__ == "__main__":

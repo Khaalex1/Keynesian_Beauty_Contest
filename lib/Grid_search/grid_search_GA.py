@@ -1,8 +1,17 @@
 from Keynesian_Beauty_Contest.lib.Players.fitness_KBC import *
 from Keynesian_Beauty_Contest.lib.Templates.Template_Benchmarks import *
 from Keynesian_Beauty_Contest.lib.Templates.Template_GA import *
+from math import *
 import pandas as pd
 
+
+
+"""
+Note that it is also possible to test only ONE set of hyperparameters and save it in a file e.g. "filename.csv".
+TO DO SO : for example, testing GA with pop_size = 40, sel_rate= 0.5, cross_type = 0, mut_rate = 0.05, elite_rate = 0.05
+-> comb = [[40], [0.5], [0], [0.05], 0.05]]
+-> GA_grid_search(comb, ... filename = "filename.csv")
+"""
 
 def GA_grid_search(all_comb, fitness, agent, bound_min=-1, bound_max=1, memory=1, integer_val=False, fit_wc=False,
                         filename='test.csv'):
