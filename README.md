@@ -1,4 +1,4 @@
-# Keynes_Beauty_Contest
+# Keynesian_Beauty_Contest
 
 This Dissertation project is about optimising plays against the Level-k model in the Keynesian Beauty Contest. Agents are trained using the metaheuristics CLONALG and GA.
 The project is built as follows :
